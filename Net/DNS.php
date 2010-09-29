@@ -36,7 +36,7 @@
 * @author     Florian Anderiasch <fa@php.net>
 * @copyright  The PHP Group
 * @license    http://www.php.net/license/3_01.txt  PHP License 3.01
-* @version    CVS: $Id: DNS.php 302014 2010-08-09 06:17:29Z bate $
+* @version    CVS: $Id: DNS.php 525 2010-09-21 14:20:10Z atulodziecki $
 * @link       http://pear.php.net/package/Net_DNS
 */
 
