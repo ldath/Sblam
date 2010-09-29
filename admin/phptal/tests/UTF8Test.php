@@ -9,7 +9,6 @@
  * @author   Laurent Bedubourg <lbedubourg@motion-twin.com>
  * @author   Kornel Lesiński <kornel@aardvarkmedia.co.uk>
  * @license  http://www.gnu.org/licenses/lgpl.html GNU Lesser General Public License
- * @version  SVN: $Id: $
  * @link     http://phptal.org/
  */
 
@@ -20,7 +19,7 @@ class UTF8Test extends PHPTAL_TestCase
     function testFile()
     {
         $this->assertContains(
-            rawurldecode("%D0%97%D0%B0%D1%80%D0%B5%D0%B3%D0%B8%D1%81%D1%82%D1%80%D0%B8%D1%80%D1%83%D0%B9%D1%82%D0%B5%D1%81%D1%8C"), 
+            rawurldecode("%D0%97%D0%B0%D1%80%D0%B5%D0%B3%D0%B8%D1%81%D1%82%D1%80%D0%B8%D1%80%D1%83%D0%B9%D1%82%D0%B5%D1%81%D1%8C"),
             $this->newPHPTAL('input/utf8.xml')->execute()
         );
     }
@@ -33,7 +32,7 @@ class UTF8Test extends PHPTAL_TestCase
     
     function testValidUTF8_1()
     {
-        /* Based on: UTF-8 decoder capability and stress test  
+        /* Based on: UTF-8 decoder capability and stress test
            Markus Kuhn <http://www.cl.cam.ac.uk/~mgk25/> - 2003-02-19 */
         
         $tpl = $this->newPHPTAL()->setSource(rawurldecode('<?xml version="1.0" encoding="UTF-8"?>
@@ -54,7 +53,7 @@ class UTF8Test extends PHPTAL_TestCase
 
     function testValidUTF8_2()
     {
-        /* Based on: UTF-8 decoder capability and stress test  
+        /* Based on: UTF-8 decoder capability and stress test
            Markus Kuhn <http://www.cl.cam.ac.uk/~mgk25/> - 2003-02-19 */
         
         $tpl = $this->newPHPTAL();
@@ -62,7 +61,7 @@ class UTF8Test extends PHPTAL_TestCase
             <test>                                                                              %7C
             2.2  Last possible sequence of a certain length                               %7C
                                                                                           %7C
-            2.2.1  1 byte  %28U-0000007F%29%3A        %22%7F%22                                        
+            2.2.1  1 byte  %28U-0000007F%29%3A        %22%7F%22
             2.2.2  2 bytes %28U-000007FF%29%3A        %22%DF%BF%22                                       %7C
             2.2.3  3 bytes %28U-0000FFFD%29%3A        %22%EF%BF%BD%22                                       %7C
           </test>'));
@@ -71,7 +70,7 @@ class UTF8Test extends PHPTAL_TestCase
 
     function testValidUTF8_3()
     {
-        /* Based on: UTF-8 decoder capability and stress test  
+        /* Based on: UTF-8 decoder capability and stress test
            Markus Kuhn <http://www.cl.cam.ac.uk/~mgk25/> - 2003-02-19 */
         
         $tpl = $this->newPHPTAL();
@@ -357,5 +356,5 @@ class UTF8Test extends PHPTAL_TestCase
     {
         $this->newPHPTAL()->setSource(rawurldecode('<p>5.3.1  U%2BFFFE %3D ef bf be %3D "%EF%BF%BE"                                                |
          5.3.2  U%2BFFFF %3D ef bf bf %3D "%EF%BF%BF"                                                |</p>'))->execute();
-    }   
+    }
 }

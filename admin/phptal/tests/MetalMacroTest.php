@@ -9,7 +9,6 @@
  * @author   Laurent Bedubourg <lbedubourg@motion-twin.com>
  * @author   Kornel Lesiński <kornel@aardvarkmedia.co.uk>
  * @license  http://www.gnu.org/licenses/lgpl.html GNU Lesser General Public License
- * @version  SVN: $Id: MetalMacroTest.php 750 2009-10-24 22:03:17Z kornel $
  * @link     http://phptal.org/
  */
 
@@ -135,7 +134,7 @@ class MetalMacroTest extends PHPTAL_TestCase
         $tpl = $this->newPHPTAL();
         $tpl->setSource(
         '<p>
-          <metal:block define-macro=" foo " /> 
+          <metal:block define-macro=" foo " />
               <a metal:define-macro="foo">bar</a>
          </p>');
         $tpl->execute();

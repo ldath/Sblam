@@ -9,7 +9,6 @@
  * @author   Laurent Bedubourg <lbedubourg@motion-twin.com>
  * @author   Kornel Lesiński <kornel@aardvarkmedia.co.uk>
  * @license  http://www.gnu.org/licenses/lgpl.html GNU Lesser General Public License
- * @version  SVN: $Id: Node.php 749 2009-10-24 22:00:29Z kornel $
  * @link     http://phptal.org/
  */
 
@@ -65,9 +64,9 @@ abstract class PHPTAL_Dom_Node
     }
     
     /**
-     * Set value of the node (type-dependent) to this exact string. 
+     * Set value of the node (type-dependent) to this exact string.
      * String must be HTML-escaped and use node's encoding.
-     * 
+     *
      * @param string $value_escaped new content
      */
     function setValueEscaped($value_escaped)
@@ -122,7 +121,7 @@ abstract class PHPTAL_Dom_Node
         if ($prop === 'node') return $this;
         if ($prop === 'generator') return self::$_codewriter_bc_hack_;
         if ($prop === 'attributes') {
-            $tmp = array(); 
+            $tmp = array();
             foreach($this->getAttributeNodes() as $att) {
                 $tmp[$att->getQualifiedName()] = $att->getValueEscaped();
             }

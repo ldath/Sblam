@@ -9,7 +9,6 @@
  * @author   Laurent Bedubourg <lbedubourg@motion-twin.com>
  * @author   Kornel Lesiński <kornel@aardvarkmedia.co.uk>
  * @license  http://www.gnu.org/licenses/lgpl.html GNU Lesser General Public License
- * @version  SVN: $Id: Exception.php 746 2009-10-05 14:21:40Z kornel $
  * @link     http://phptal.org/
  */
 /**
@@ -72,7 +71,7 @@ class PHPTAL_TemplateException extends PHPTAL_Exception
  * @package PHPTAL
  * @subpackage Exception
  */
-class PHPTAL_IOException extends PHPTAL_Exception 
+class PHPTAL_IOException extends PHPTAL_Exception
 {
 }
 
@@ -82,7 +81,7 @@ class PHPTAL_IOException extends PHPTAL_Exception
  * @package PHPTAL
  * @subpackage Exception
  */
-class PHPTAL_InvalidVariableNameException extends PHPTAL_Exception 
+class PHPTAL_InvalidVariableNameException extends PHPTAL_Exception
 {
 }
 
@@ -92,7 +91,7 @@ class PHPTAL_InvalidVariableNameException extends PHPTAL_Exception
  * @package PHPTAL
  * @subpackage Exception
  */
-class PHPTAL_ConfigurationException extends PHPTAL_Exception 
+class PHPTAL_ConfigurationException extends PHPTAL_Exception
 {
 }
 

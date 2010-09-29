@@ -9,7 +9,6 @@
  * @author   Laurent Bedubourg <lbedubourg@motion-twin.com>
  * @author   Kornel Lesiński <kornel@aardvarkmedia.co.uk>
  * @license  http://www.gnu.org/licenses/lgpl.html GNU Lesser General Public License
- * @version  SVN: $Id: run-tests.php 714 2009-09-12 00:26:42Z kornel $
  * @link     http://phptal.org/
  */
 //require_once 'PHPUnit/Framework/Test.php';

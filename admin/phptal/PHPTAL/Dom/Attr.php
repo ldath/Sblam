@@ -9,7 +9,6 @@
  * @author   Laurent Bedubourg <lbedubourg@motion-twin.com>
  * @author   Kornel Lesiński <kornel@aardvarkmedia.co.uk>
  * @license  http://www.gnu.org/licenses/lgpl.html GNU Lesser General Public License
- * @version  SVN: $Id: Attr.php 715 2009-09-14 22:57:56Z kornel $
  * @link     http://phptal.org/
  */
 
@@ -81,7 +80,7 @@ class PHPTAL_Dom_Attr
     
     /**
      * Returns true if this attribute is ns declaration (xmlns="...")
-     *  
+     *
      * @return bool
      */
     function isNamespaceDeclaration()
@@ -121,9 +120,9 @@ class PHPTAL_Dom_Attr
     }
     
     /**
-     * Set value of the attribute to this exact string. 
+     * Set value of the attribute to this exact string.
      * String must be HTML-escaped and use attribute's encoding.
-     * 
+     *
      * @param string $value_escaped new content
      */
     function setValueEscaped($value_escaped)

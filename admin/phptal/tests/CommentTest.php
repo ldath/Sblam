@@ -9,7 +9,6 @@
  * @author   Laurent Bedubourg <lbedubourg@motion-twin.com>
  * @author   Kornel Lesiński <kornel@aardvarkmedia.co.uk>
  * @license  http://www.gnu.org/licenses/lgpl.html GNU Lesser General Public License
- * @version  SVN: $Id: CommentTest.php 750 2009-10-24 22:03:17Z kornel $
  * @link     http://phptal.org/
  */
 
@@ -87,7 +86,7 @@ class CommentTest extends PHPTAL_TestCase
             /* comment <tag> */
             // comment
             --></script>';
-        $tpl->setSource($src);            
+        $tpl->setSource($src);
         $this->assertEquals($src,$tpl->execute());
     }
 }

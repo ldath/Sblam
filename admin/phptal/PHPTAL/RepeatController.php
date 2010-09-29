@@ -10,7 +10,6 @@
  * @author   Kornel Lesiński <kornel@aardvarkmedia.co.uk>
  * @author   Iván Montes <drslump@pollinimini.net>
  * @license  http://www.gnu.org/licenses/lgpl.html GNU Lesser General Public License
- * @version  SVN: $Id: RepeatController.php 659 2009-07-08 13:07:25Z kornel $
  * @link     http://phptal.org/
  */
   
@@ -67,7 +66,7 @@ class PHPTAL_RepeatController implements Iterator
             $this->iterator = $source;
         } elseif ($source instanceof Traversable) {
             $this->iterator = new IteratorIterator($source);
-        } elseif ($source instanceof DOMNodeList) {            
+        } elseif ($source instanceof DOMNodeList) {
             $array = array();
             foreach ($source as $k=>$v) {
                 $array[$k] = $v;
@@ -235,7 +234,7 @@ class PHPTAL_RepeatController implements Iterator
                 return is_bool($res) ? $res : $this->groups;
                 
             case 'last':
-                $this->initializeGroups();            
+                $this->initializeGroups();
                 // Compare the next one with the dictionary
                 $res = $this->groups->last( $this->iterator->current() );
                 return is_bool($res) ? $res : $this->groups;

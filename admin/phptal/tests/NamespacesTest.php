@@ -9,7 +9,6 @@
  * @author   Laurent Bedubourg <lbedubourg@motion-twin.com>
  * @author   Kornel Lesiński <kornel@aardvarkmedia.co.uk>
  * @license  http://www.gnu.org/licenses/lgpl.html GNU Lesser General Public License
- * @version  SVN: $Id: NamespacesTest.php 677 2009-07-20 11:58:26Z kornel $
  * @link     http://phptal.org/
  */
 
@@ -89,7 +88,7 @@ class NamespacesTest extends PHPTAL_TestCase
     /**
      * @expectedException PHPTAL_ConfigurationException
      */
-    function testPHPTALNamespaceClassRejectsEmptyNS() 
+    function testPHPTALNamespaceClassRejectsEmptyNS()
     {
         new Test_PHPTAL_Namespace('test','');
     }
@@ -97,7 +96,7 @@ class NamespacesTest extends PHPTAL_TestCase
     /**
      * @expectedException PHPTAL_ConfigurationException
      */
-    function testPHPTALNamespaceClassRejectsEmptyPrefix() 
+    function testPHPTALNamespaceClassRejectsEmptyPrefix()
     {
         new Test_PHPTAL_Namespace('','urn:test');
     }

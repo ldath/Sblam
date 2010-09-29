@@ -9,7 +9,6 @@
  * @author   Laurent Bedubourg <lbedubourg@motion-twin.com>
  * @author   Kornel Lesiński <kornel@aardvarkmedia.co.uk>
  * @license  http://www.gnu.org/licenses/lgpl.html GNU Lesser General Public License
- * @version  SVN: $Id: SaxXmlParser.php 758 2009-10-24 23:55:29Z kornel $
  * @link     http://phptal.org/
  */
 
@@ -185,7 +184,7 @@ class PHPTAL_Dom_SaxXmlParser
                             } else /* isWhiteChar */ {
                                 $state = self::ST_TAG_ATTRIBUTES;
                             }
-                        }                        
+                        }
                         break;
 
                     case self::ST_TAG_CLOSE:
@@ -366,8 +365,8 @@ class PHPTAL_Dom_SaxXmlParser
             // $match expression below somehow triggers quite deep recurrency and stack overflow in preg
             // to avoid this, check string bit by bit, omitting ASCII fragments.
             if (strlen($str) > 200)
-            {                  
-                $chunks = preg_split('/(?>[\x09\x0A\x0D\x20-\x7F]+)/',$str,NULL,PREG_SPLIT_NO_EMPTY);  
+            {
+                $chunks = preg_split('/(?>[\x09\x0A\x0D\x20-\x7F]+)/',$str,NULL,PREG_SPLIT_NO_EMPTY);
                 foreach($chunks as $chunk) {
                     if (strlen($chunk) < 200) {
                         $this->checkEncoding($chunk);
@@ -393,7 +392,7 @@ class PHPTAL_Dom_SaxXmlParser
                 for($i=0; $i < count($res); $i+=2)
                 {
                     $res[$i] = self::convertBytesToEntities(array(1=>$res[$i]));
-                }                
+                }
                 $this->raiseError("Invalid UTF-8 bytes: ".implode('',$res));
             }
         }
@@ -414,7 +413,7 @@ class PHPTAL_Dom_SaxXmlParser
     /**
      * preg callback
      * Changes all bytes to hexadecimal XML entities
-     * 
+     *
      * @param array $m first array element is used for input
      * @return string
      */

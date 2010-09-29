@@ -10,7 +10,6 @@
  * @author   Kornel Lesiński <kornel@aardvarkmedia.co.uk>
  * @author   Iván Montes <drslump@pollinimini.net>
  * @license  http://www.gnu.org/licenses/lgpl.html GNU Lesser General Public License
- * @version  SVN: $Id: RepeatControllerGroups.php 657 2009-06-30 16:48:20Z kornel $
  * @link     http://phptal.org/
  */
 

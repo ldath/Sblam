@@ -9,7 +9,6 @@
  * @author   Laurent Bedubourg <lbedubourg@motion-twin.com>
  * @author   Kornel Lesiński <kornel@aardvarkmedia.co.uk>
  * @license  http://www.gnu.org/licenses/lgpl.html GNU Lesser General Public License
- * @version  SVN: $Id: MetalSlotTest.php 710 2009-09-07 11:46:50Z kornel $
  * @link     http://phptal.org/
  */
 
@@ -41,12 +40,12 @@ class MetalSlotTest extends PHPTAL_TestCase
             <div metal:define-macro="m">
                 <div tal:define="var string:invalid">
                     <span metal:define-slot="s">empty slot</span>
-                </div>    
+                </div>
             </div>
             
             <div metal:use-macro="m">
                 <div metal:fill-slot="s">var = ${var}</div>
-            </div>    
+            </div>
         ');
         $this->assertEquals(trim_string('<div><div><div>var = topmost</div></div></div>'),trim_string($tpl->execute()), $tpl->getCodePath());
     }
@@ -61,7 +60,7 @@ class MetalSlotTest extends PHPTAL_TestCase
               </div>
 
               <div metal:define-macro="test2">
-                test2 macro value:<span metal:define-slot="value">a value should go here</span>                
+                test2 macro value:<span metal:define-slot="value">a value should go here</span>
               </div>
 
               <div metal:use-macro="test1" class="calls test1 macro">
@@ -160,17 +159,17 @@ class MetalSlotTest extends PHPTAL_TestCase
                     <a title="stuff lots of stuff stuff lots of stuff stuff lots of stuff stuff lots of stuff lots of stuff stuff lots of stuff">stuff</a>
                     <a title="stuff lots of stuff stuff lots of stuff stuff lots of stuff stuff lots of stuff lots of stuff stuff lots of stuff">stuff</a>
                     <a title="stuff lots of stuff stuff lots of stuff stuff lots of stuff stuff lots of stuff lots of stuff stuff lots of stuff">stuff</a>
-                </inner>    
-            </loop>    
+                </inner>
+            </loop>
         </s></f>
         ');
         
-        $res = $tpl->execute();        
+        $res = $tpl->execute();
         $this->assertGreaterThan(PHPTAL_Php_Attribute_METAL_FillSlot::CALLBACK_THRESHOLD,strlen($res));
         
         $tpl_php_source = file_get_contents($tpl->getCodePath());
         
-        $this->assertNotContains("fillSlot(",$tpl_php_source);        
+        $this->assertNotContains("fillSlot(",$tpl_php_source);
         $this->assertContains("fillSlotCallback(",$tpl_php_source);
     }
 
@@ -190,7 +189,7 @@ class MetalSlotTest extends PHPTAL_TestCase
         $tpl_php_source = file_get_contents($tpl->getCodePath());
         
         $this->assertNotContains("fillSlotCallback(",$tpl_php_source);
-        $this->assertContains("fillSlot(",$tpl_php_source);        
+        $this->assertContains("fillSlot(",$tpl_php_source);
     }
 
 }

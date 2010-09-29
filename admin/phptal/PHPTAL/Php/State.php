@@ -9,7 +9,6 @@
  * @author   Laurent Bedubourg <lbedubourg@motion-twin.com>
  * @author   Kornel Lesiński <kornel@aardvarkmedia.co.uk>
  * @license  http://www.gnu.org/licenses/lgpl.html GNU Lesser General Public License
- * @version  SVN: $Id: State.php 752 2009-10-24 22:21:16Z kornel $
  * @link     http://phptal.org/
  */
 
@@ -29,7 +28,7 @@ class PHPTAL_Php_State
 
     function __construct(PHPTAL $phptal)
     {
-        $this->phptal = $phptal; 
+        $this->phptal = $phptal;
         $this->encoding = $phptal->getEncoding();
         $this->output_mode = $phptal->getOutputMode();
     }
@@ -63,7 +62,7 @@ class PHPTAL_Php_State
     /**
      * Sets new and returns old TALES mode.
      * Valid modes are 'tales' and 'php'
-     * 
+     *
      * @param string $mode
      * @return string
      */
@@ -119,7 +118,7 @@ class PHPTAL_Php_State
 
     /**
      * compile TALES expression according to current talesMode
-     * @return string with PHP code 
+     * @return string with PHP code
      */
     private function compileTalesToPHPExpression($expression)
     {
@@ -154,12 +153,12 @@ class PHPTAL_Php_State
      */
     private function _interpolateTalesVars($src)
     {
-        $src = html_entity_decode($src,ENT_QUOTES, $this->getEncoding());        
+        $src = html_entity_decode($src,ENT_QUOTES, $this->getEncoding());
         return $this->compileTalesToPHPExpression($src);
     }
 
     /**
-     * callback for interpolation of TALES with structure keyword, i.e. output without HTML-escapes, 
+     * callback for interpolation of TALES with structure keyword, i.e. output without HTML-escapes,
      * but input with HTML-escapes.
      */
     private function _interpolateTalesVarsHTMLStructure($matches)
@@ -172,7 +171,7 @@ class PHPTAL_Php_State
      * callback for interpolation of TALES with structure keyword, i.e. input and output without HTML-escapes.
      */
     private function _interpolateTalesVarsCDATAStructure($matches)
-    {        
+    {
         return '<?php echo '.$this->stringify($this->compileTalesToPHPExpression($matches[1])).' ?>';
     }
 

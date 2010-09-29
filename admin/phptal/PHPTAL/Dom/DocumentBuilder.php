@@ -9,7 +9,6 @@
  * @author   Laurent Bedubourg <lbedubourg@motion-twin.com>
  * @author   Kornel Lesiński <kornel@aardvarkmedia.co.uk>
  * @license  http://www.gnu.org/licenses/lgpl.html GNU Lesser General Public License
- * @version  SVN: $Id: DocumentBuilder.php 736 2009-09-25 16:56:40Z kornel $
  * @link     http://phptal.org/
  */
 
@@ -118,7 +117,7 @@ class PHPTAL_Dom_DocumentBuilder
                 $attr_namespace_uri = ''; // default NS. Attributes don't inherit namespace per XMLNS spec
             }
 
-            if ($this->_xmlns->isHandledNamespace($attr_namespace_uri) 
+            if ($this->_xmlns->isHandledNamespace($attr_namespace_uri)
                 && !$this->_xmlns->isValidAttributeNS($attr_namespace_uri, $local_name)) {
                 throw new PHPTAL_ParserException("Attribute '$local_name' is in '$attr_namespace_uri' namespace, but is not a supported PHPTAL attribute");
             }

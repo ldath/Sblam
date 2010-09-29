@@ -9,7 +9,6 @@
  * @author   Laurent Bedubourg <lbedubourg@motion-twin.com>
  * @author   Kornel Lesiński <kornel@aardvarkmedia.co.uk>
  * @license  http://www.gnu.org/licenses/lgpl.html GNU Lesser General Public License
- * @version  SVN: $Id:  $
  * @link     http://phptal.org/
  */
 
@@ -64,7 +63,7 @@ class PreFilterNormalizeTest extends PHPTAL_TestCase
     
     function testSkipsXMLSpacePreserve()
     {
-        $tpl = $this->newPHPTAL()->setSource("<p title='   foo \r\n bar \t\tbaz '> 
+        $tpl = $this->newPHPTAL()->setSource("<p title='   foo \r\n bar \t\tbaz '>
         <span xml:space='preserve' title=' spa  ced '> \n </span>   </p>");
         
         $tpl->addPreFilter(new PHPTAL_PreFilter_Normalize());
@@ -75,7 +74,7 @@ class PreFilterNormalizeTest extends PHPTAL_TestCase
     
     function testResumesXMLSpaceDefault()
     {
-        $tpl = $this->newPHPTAL()->setSource("<p title='   foo \r\n bar \t\tbaz '> 
+        $tpl = $this->newPHPTAL()->setSource("<p title='   foo \r\n bar \t\tbaz '>
         <span xml:space='preserve' title=' spa  ced '> \n <x xml:space='default' y=' a '>\r\n</x> </span>   </p>");
         
         $tpl->addPreFilter(new PHPTAL_PreFilter_Normalize());
@@ -101,7 +100,7 @@ class PreFilterNormalizeTest extends PHPTAL_TestCase
     }
     
     
-    function testNormalizeSpaceRemovesEmpty() 
+    function testNormalizeSpaceRemovesEmpty()
     {
         $el = $this->newElement();
         $el->appendChild(new PHPTAL_Dom_Text('','UTF-8'));
@@ -111,10 +110,10 @@ class PreFilterNormalizeTest extends PHPTAL_TestCase
         
         $this->runFilter($el);
         
-        $this->assertEquals(0, count($el->childNodes));        
+        $this->assertEquals(0, count($el->childNodes));
     }
     
-    function testNormalizeSpaceMerges() 
+    function testNormalizeSpaceMerges()
     {
         $el = $this->newElement();
         $el->appendChild(new PHPTAL_Dom_Text('a','UTF-8'));
@@ -124,10 +123,10 @@ class PreFilterNormalizeTest extends PHPTAL_TestCase
         
         $this->runFilter($el);
         
-        $this->assertEquals(1, count($el->childNodes));        
+        $this->assertEquals(1, count($el->childNodes));
     }
     
-    function testNormalizeSpaceSkipsElement() 
+    function testNormalizeSpaceSkipsElement()
     {
         $el = $this->newElement();
         $el->appendChild(new PHPTAL_Dom_Text('a','UTF-8'));
@@ -138,7 +137,7 @@ class PreFilterNormalizeTest extends PHPTAL_TestCase
         
         $this->runFilter($el);
         
-        $this->assertEquals(3, count($el->childNodes));        
+        $this->assertEquals(3, count($el->childNodes));
     }
 
 }

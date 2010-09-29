@@ -9,7 +9,6 @@
  * @author   Laurent Bedubourg <lbedubourg@motion-twin.com>
  * @author   Kornel Lesiński <kornel@aardvarkmedia.co.uk>
  * @license  http://www.gnu.org/licenses/lgpl.html GNU Lesser General Public License
- * @version  SVN: $Id: TalesTest.php 657 2009-06-30 16:48:20Z kornel $
  * @link     http://phptal.org/
  */
 
@@ -142,7 +141,7 @@ class TalesTest extends PHPTAL_TestCase
         $tpl->aaaaaaaaaaaaaaaaaaaaa = 'ok';
         $tpl->bbb = 'ok';
         
-        $tpl->setSource('<x tal:attributes="y string:$bbb/y/y; x string:$aaaaaaaaaaaaaaaaaaaaa/x/x" />');        
+        $tpl->setSource('<x tal:attributes="y string:$bbb/y/y; x string:$aaaaaaaaaaaaaaaaaaaaa/x/x" />');
         $tpl->execute();
     }
 }

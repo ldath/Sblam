@@ -9,7 +9,6 @@
  * @author   Laurent Bedubourg <lbedubourg@motion-twin.com>
  * @author   Kornel Lesiński <kornel@aardvarkmedia.co.uk>
  * @license  http://www.gnu.org/licenses/lgpl.html GNU Lesser General Public License
- * @version  SVN: $Id: Define.php 671 2009-07-11 18:11:35Z kornel $
  * @link     http://phptal.org/
  */
 
@@ -58,7 +57,7 @@ implements PHPTAL_Php_TalesChainReader
             $this->_defineScope = $defineScope;
 
             // <span tal:define="global foo" /> should be invisible, but <img tal:define="bar baz" /> not
-            if ($defineScope != 'global') $definesAnyNonGlobalVars = true; 
+            if ($defineScope != 'global') $definesAnyNonGlobalVars = true;
 
             if ($this->_defineScope != 'global' && !$this->_pushedContext) {
                 $codewriter->pushContext();

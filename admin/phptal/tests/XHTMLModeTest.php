@@ -9,7 +9,6 @@
  * @author   Laurent Bedubourg <lbedubourg@motion-twin.com>
  * @author   Kornel Lesiński <kornel@aardvarkmedia.co.uk>
  * @license  http://www.gnu.org/licenses/lgpl.html GNU Lesser General Public License
- * @version  SVN: $Id: XHTMLModeTest.php 649 2009-06-14 21:56:35Z kornel $
  * @link     http://phptal.org/
  */
 
@@ -109,7 +108,7 @@ class XHTMLModeTest extends PHPTAL_TestCase
     {
         $tpl = $this->newPHPTAL()->setSource('
         <select>
-          <option tal:repeat="option options" tal:attributes="value option/value; 
+          <option tal:repeat="option options" tal:attributes="value option/value;
         selected option/isSelected | nothing" tal:content="option/label"/>
         </select>');
         

@@ -9,7 +9,6 @@
  * @author   Laurent Bedubourg <lbedubourg@motion-twin.com>
  * @author   Kornel Lesiński <kornel@aardvarkmedia.co.uk>
  * @license  http://www.gnu.org/licenses/lgpl.html GNU Lesser General Public License
- * @version  SVN: $Id: config.php 714 2009-09-12 00:26:42Z kornel $
  * @link     http://phptal.org/
  */
 
@@ -22,9 +21,9 @@ if (!class_exists('PHPTAL'))
     // try local copy of PHPTAL first, otherwise it might be testing
     // PEAR version (or another in include path) causing serious WTF!?s.
     if (file_exists(dirname(__FILE__).'/../classes/PHPTAL.php')) {
-        require_once dirname(__FILE__).'/../classes/PHPTAL.php';        
+        require_once dirname(__FILE__).'/../classes/PHPTAL.php';
     } elseif (file_exists(dirname(__FILE__).'/../PHPTAL.php')) {
-        require_once dirname(__FILE__).'/../PHPTAL.php';        
+        require_once dirname(__FILE__).'/../PHPTAL.php';
     } else {
         require_once "PHPTAL.php";
     }
@@ -38,7 +37,7 @@ abstract class PHPTAL_TestCase extends PHPUnit_Framework_TestCase
 {
     private $cwd_backup;
     function setUp()
-    {        
+    {
         // tests rely on cwd being in tests/
         $this->cwd_backup = getcwd();
         chdir(dirname(__FILE__));
@@ -61,7 +60,7 @@ abstract class PHPTAL_TestCase extends PHPUnit_Framework_TestCase
         $p = new PHPTAL($tpl);
         $p->setForceReparse(true);
         return $p;
-    }    
+    }
 }
 
 if (function_exists('date_default_timezone_set')) {

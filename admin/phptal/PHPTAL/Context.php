@@ -9,7 +9,6 @@
  * @author   Laurent Bedubourg <lbedubourg@motion-twin.com>
  * @author   Kornel Lesiński <kornel@aardvarkmedia.co.uk>
  * @license  http://www.gnu.org/licenses/lgpl.html GNU Lesser General Public License
- * @version  SVN: $Id: Context.php 747 2009-10-05 15:57:08Z kornel $
  * @link     http://phptal.org/
  */
 /**
@@ -111,10 +110,10 @@ class PHPTAL_Context
                 echo $doctype."\n";
             } else {
                 throw new PHPTAL_ConfigurationException("Executed macro in file with DOCTYPE when using echoExecute(). This is not supported yet. Remove DOCTYPE or use PHPTAL->execute().");
-            }            
-        }            
-        else if (!$this->_docType) {            
-            $this->_docType = $doctype;            
+            }
+        }
+        else if (!$this->_docType) {
+            $this->_docType = $doctype;
         }
     }
 
@@ -124,7 +123,7 @@ class PHPTAL_Context
      * This method ensure PHPTAL uses the first xml declaration encountered
      * (main template or any macro template source containing an xml
      * declaration)
-     *     
+     *
      * @param bool $called_from_macro will do nothing if _echoDeclarations is also set
      * @return void
      */

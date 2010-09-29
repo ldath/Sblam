@@ -9,7 +9,6 @@
  * @author   Laurent Bedubourg <lbedubourg@motion-twin.com>
  * @author   Kornel Lesiński <kornel@aardvarkmedia.co.uk>
  * @license  http://www.gnu.org/licenses/lgpl.html GNU Lesser General Public License
- * @version  SVN: $Id: FillSlot.php 710 2009-09-07 11:46:50Z kornel $
  * @link     http://phptal.org/
  */
 
@@ -52,7 +51,7 @@
  */
 class PHPTAL_Php_Attribute_METAL_FillSlot extends PHPTAL_Php_Attribute
 {
-    private static $uid = 0;    
+    private static $uid = 0;
     private $function_name;
     
     public function before(PHPTAL_Php_CodeWriter $codewriter)
@@ -62,19 +61,19 @@ class PHPTAL_Php_Attribute_METAL_FillSlot extends PHPTAL_Php_Attribute
             $codewriter->doFunction($function_base_name,'PHPTAL $_thistpl, PHPTAL $tpl');
             $this->function_name = $codewriter->getFunctionPrefix().$function_base_name;
             
-            $codewriter->doSetVar('$ctx','$tpl->getContext()');            
+            $codewriter->doSetVar('$ctx','$tpl->getContext()');
             $codewriter->doSetVar('$_translator', '$tpl->getTranslator()');
         } else {
             $codewriter->pushCode('ob_start()');
             $this->function_name = NULL;
-        }     
+        }
     }
 
     public function after(PHPTAL_Php_CodeWriter $codewriter)
     {
         if ($this->function_name !== NULL) {
-            $codewriter->doEnd();            
-            $codewriter->pushCode('$ctx->fillSlotCallback('.$codewriter->str($this->expression).', '.$codewriter->str($this->function_name).', $_thistpl, clone $tpl)'); 
+            $codewriter->doEnd();
+            $codewriter->pushCode('$ctx->fillSlotCallback('.$codewriter->str($this->expression).', '.$codewriter->str($this->function_name).', $_thistpl, clone $tpl)');
         } else {
             $codewriter->pushCode('$ctx->fillSlot('.$codewriter->str($this->expression).', ob_get_clean())');
         }
@@ -88,7 +87,7 @@ class PHPTAL_Php_Attribute_METAL_FillSlot extends PHPTAL_Php_Attribute
      */
     private function shouldUseCallback()
     {
-        // since callback is slightly slower than buffering, 
+        // since callback is slightly slower than buffering,
         // use callback only for content that is large to offset speed loss by memory savings
         return $this->estimateNumberOfBytesOutput($this->phpelement, false) > self::CALLBACK_THRESHOLD;
     }
@@ -111,9 +110,9 @@ class PHPTAL_Php_Attribute_METAL_FillSlot extends PHPTAL_Php_Attribute
             $estimated_bytes += strlen($attr->getValueEscaped()); // this is shoddy for replaced attributes
         }
 
-        $has_repeat_attr = $element->hasAttributeNS('http://xml.zope.org/namespaces/tal','repeat');        
+        $has_repeat_attr = $element->hasAttributeNS('http://xml.zope.org/namespaces/tal','repeat');
         
-        if ($element->hasAttributeNS('http://xml.zope.org/namespaces/tal','content') || 
+        if ($element->hasAttributeNS('http://xml.zope.org/namespaces/tal','content') ||
             $element->hasAttributeNS('http://xml.zope.org/namespaces/tal','replace')) {
             // assume that output in loops is shorter (e.g. table rows) than outside (main content)
             $estimated_bytes += ($has_repeat_attr || $is_nested_in_repeat) ? 500 : 2000;
@@ -137,7 +136,7 @@ class PHPTAL_Php_Attribute_METAL_FillSlot extends PHPTAL_Php_Attribute
         
         if ($element->hasAttributeNS('http://xml.zope.org/namespaces/tal','repeat')) {
             // assume people don't write big nested loops
-            $estimated_bytes *= $is_nested_in_repeat ? 5 : 10; 
+            $estimated_bytes *= $is_nested_in_repeat ? 5 : 10;
         }
         
         return $estimated_bytes;

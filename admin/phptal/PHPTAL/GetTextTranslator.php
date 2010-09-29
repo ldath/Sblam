@@ -9,7 +9,6 @@
  * @author   Laurent Bedubourg <lbedubourg@motion-twin.com>
  * @author   Kornel Lesiński <kornel@aardvarkmedia.co.uk>
  * @license  http://www.gnu.org/licenses/lgpl.html GNU Lesser General Public License
- * @version  SVN: $Id: GetTextTranslator.php 629 2009-06-05 23:03:28Z kornel $
  * @link     http://phptal.org/
  */
 
@@ -79,7 +78,7 @@ class PHPTAL_GetTextTranslator implements PHPTAL_TranslationService
     {
         $langs = func_get_args();
         
-        $langCode = $this->trySettingLanguages(LC_ALL,$langs);        
+        $langCode = $this->trySettingLanguages(LC_ALL,$langs);
         if ($langCode) return $langCode;
         
         if (defined("LC_MESSAGES")) {
@@ -87,7 +86,7 @@ class PHPTAL_GetTextTranslator implements PHPTAL_TranslationService
             if ($langCode) return $langCode;
         }
         
-        throw new PHPTAL_ConfigurationException('Language(s) code(s) "'.implode(', ', $langs).'" not supported by your system');        
+        throw new PHPTAL_ConfigurationException('Language(s) code(s) "'.implode(', ', $langs).'" not supported by your system');
     }
     
     private function trySettingLanguages($category, array $langs)

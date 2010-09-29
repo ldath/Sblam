@@ -9,7 +9,6 @@
  * @author   Laurent Bedubourg <lbedubourg@motion-twin.com>
  * @author   Kornel Lesiński <kornel@aardvarkmedia.co.uk>
  * @license  http://www.gnu.org/licenses/lgpl.html GNU Lesser General Public License
- * @version  SVN: $Id: DoctypeTest.php 707 2009-09-02 10:15:41Z kornel $
  * @link     http://phptal.org/
  */
 
@@ -59,12 +58,12 @@ class DoctypeTest extends PHPTAL_TestCase
 	    $tpl->setSource('<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><whatever/>');
 	    
 	    $this->assertContains("DOCTYPE html PUBLIC",$tpl->execute());
-	    $this->assertContains("DOCTYPE html PUBLIC",$tpl->execute());        
+	    $this->assertContains("DOCTYPE html PUBLIC",$tpl->execute());
 	    
-	    $tpl->setSource('<whatever/>');	    
+	    $tpl->setSource('<whatever/>');
 
 	    $this->assertNotContains("DOCTYPE html PUBLIC",$tpl->execute());
-	    $this->assertNotContains("DOCTYPE html PUBLIC",$tpl->execute());        
+	    $this->assertNotContains("DOCTYPE html PUBLIC",$tpl->execute());
     }
     
     /**

@@ -9,7 +9,6 @@
  * @author   Laurent Bedubourg <lbedubourg@motion-twin.com>
  * @author   Kornel Lesiński <kornel@aardvarkmedia.co.uk>
  * @license  http://www.gnu.org/licenses/lgpl.html GNU Lesser General Public License
- * @version  SVN: $Id: TalDefineTest.php 707 2009-09-02 10:15:41Z kornel $
  * @link     http://phptal.org/
  */
 
@@ -319,7 +318,7 @@ class TalDefineTest extends PHPTAL_TestCase
     /**
      * @expectedException PHPTAL_Exception
      */
-    function testRejectsInvalidExpression() 
+    function testRejectsInvalidExpression()
     {
         $tpl = $this->newPHPTAL();
         $tpl->setSource('<x tal:define="global foo | default"/>');
@@ -329,10 +328,10 @@ class TalDefineTest extends PHPTAL_TestCase
     function testHasRealContent()
     {
         $tpl = $this->newPHPTAL();
-        $tpl->setSource('<y 
+        $tpl->setSource('<y
         phptal:debug="">
         
-        <x 
+        <x
         tal:define="global foo bar | default"
         >
         test
@@ -360,7 +359,7 @@ class TalDefineTest extends PHPTAL_TestCase
                         <td tal:define="event php: row.$team.$event_name" tal:attributes="style \'THIS DOESNT WORK\'">
                            ${event/player/surname}
                        </td>
-                   </tal:block>');        
-        $tpl->execute();  
+                   </tal:block>');
+        $tpl->execute();
     }
 }

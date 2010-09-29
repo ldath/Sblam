@@ -9,7 +9,6 @@
  * @author   Laurent Bedubourg <lbedubourg@motion-twin.com>
  * @author   Kornel Lesiński <kornel@aardvarkmedia.co.uk>
  * @license  http://www.gnu.org/licenses/lgpl.html GNU Lesser General Public License
- * @version  SVN: $Id: CodeWriter.php 735 2009-09-25 16:54:56Z kornel $
  * @link     http://phptal.org/
  */
 /**
@@ -20,7 +19,7 @@
  * @author Laurent Bedubourg <lbedubourg@motion-twin.com>
  */
 class PHPTAL_Php_CodeWriter
-{    
+{
     /**
      * max id of variable to give as temp
      */
@@ -67,7 +66,7 @@ class PHPTAL_Php_CodeWriter
 
     /**
      * set full '<!DOCTYPE...>' string to output later
-     * 
+     *
      * @param string $dt
      * @return void
      */
@@ -78,7 +77,7 @@ class PHPTAL_Php_CodeWriter
 
     /**
      * set full '<?xml ?>' string to output later
-     * 
+     *
      * @param string $dt
      * @return void
      */
@@ -90,7 +89,7 @@ class PHPTAL_Php_CodeWriter
     /**
      * functions later generated and checked for existence will have this prefix added
      * (poor man's namespace)
-     * 
+     *
      * @param string $prefix
      * @return void
      */
@@ -109,7 +108,7 @@ class PHPTAL_Php_CodeWriter
 
     /**
      * @see PHPTAL_Php_State::setTalesMode()
-     * 
+     *
      * @param string $mode
      * @return string
      */
@@ -206,7 +205,7 @@ class PHPTAL_Php_CodeWriter
     }
     
     /**
-     * Generate XML declaration 
+     * Generate XML declaration
      *
      * @param bool $called_from_macro for error checking: unbuffered output doesn't support that
      */
@@ -232,7 +231,7 @@ class PHPTAL_Php_CodeWriter
         $this->doSetVar('$_translator', '$tpl->getTranslator()');
         $treeGen->generateCode($this);
         $this->doComment("end");
-        $this->doEnd('function');        
+        $this->doEnd('function');
     }
 
     public function doFunction($name, $params)
@@ -331,7 +330,7 @@ class PHPTAL_Php_CodeWriter
     {
         if (end($this->_segments) !== 'if') {
             throw new PHPTAL_Exception("Bug: CodeWriter generated else without if");
-        }        
+        }
         $this->unindent();
         $this->pushCode('else: ');
         $this->indent();

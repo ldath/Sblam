@@ -9,7 +9,6 @@
  * @author   Laurent Bedubourg <lbedubourg@motion-twin.com>
  * @author   Kornel Lesiński <kornel@aardvarkmedia.co.uk>
  * @license  http://www.gnu.org/licenses/lgpl.html GNU Lesser General Public License
- * @version  SVN: $Id: PhptalTest.php 757 2009-10-24 23:53:56Z kornel $
  * @link     http://phptal.org/
  */
 
@@ -180,7 +179,7 @@ class PhptalTest extends PHPTAL_TestCase
         catch(PHPTAL_Exception $e) {
             $this->fail("Thrown exception ".get_class($e)." (".$e->getMessage().") rather than PHPTAL_IOException");
         }
-    }    
+    }
     
     function testEncodingUppercase()
     {

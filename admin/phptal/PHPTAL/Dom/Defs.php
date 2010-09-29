@@ -9,7 +9,6 @@
  * @author   Laurent Bedubourg <lbedubourg@motion-twin.com>
  * @author   Kornel Lesiński <kornel@aardvarkmedia.co.uk>
  * @license  http://www.gnu.org/licenses/lgpl.html GNU Lesser General Public License
- * @version  SVN: $Id: Defs.php 677 2009-07-20 11:58:26Z kornel $
  * @link     http://phptal.org/
  */
 
@@ -57,7 +56,7 @@ class PHPTAL_Dom_Defs
     /**
      * true if it's empty in XHTML (e.g. <img/>)
      * it will assume elements with no namespace may be XHTML too.
-     * 
+     *
      * @param string $tagName local name of the tag
      * @return bool
      */

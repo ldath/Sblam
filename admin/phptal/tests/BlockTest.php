@@ -9,7 +9,6 @@
  * @author   Laurent Bedubourg <lbedubourg@motion-twin.com>
  * @author   Kornel Lesiński <kornel@aardvarkmedia.co.uk>
  * @license  http://www.gnu.org/licenses/lgpl.html GNU Lesser General Public License
- * @version  SVN: $Id: BlockTest.php 579 2009-04-25 23:14:46Z kornel $
  * @link     http://phptal.org/
  */
 
@@ -48,9 +47,9 @@ class BlockTest extends PHPTAL_TestCase
 				
 		$this->setExpectedException('PHPTAL_Exception');
 		
-		$t->setSource('<foo:block>foo</foo:block>');		
-		$res = $t->execute();		
-	}	
+		$t->setSource('<foo:block>foo</foo:block>');
+		$res = $t->execute();
+	}
 }
 
 

@@ -9,7 +9,6 @@
  * @author   Laurent Bedubourg <lbedubourg@motion-twin.com>
  * @author   Kornel Lesiński <kornel@aardvarkmedia.co.uk>
  * @license  http://www.gnu.org/licenses/lgpl.html GNU Lesser General Public License
- * @version  SVN: $Id: $
  * @link     http://phptal.org/
  */
 
@@ -83,9 +82,9 @@ class DOMTest extends PHPTAL_TestCase
 
         $this->assertSame($el1,$el4->parentNode);
 
-        $el1->removeChild($el4);   
+        $el1->removeChild($el4);
         
-        $this->assertNull($el4->parentNode);       
+        $this->assertNull($el4->parentNode);
         
         $this->assertEquals(2,count($el1->childNodes));
         $this->assertTrue(isset($el1->childNodes[1]));
@@ -116,14 +115,14 @@ class DOMTest extends PHPTAL_TestCase
         $this->assertEquals(3,count($el1->childNodes));
         $this->assertSame($el3,$el1->childNodes[1]);
 
-        $el1->replaceChild($r, $el3);   
+        $el1->replaceChild($r, $el3);
 
         $this->assertEquals(3,count($el1->childNodes));
         $this->assertSame($el2,$el1->childNodes[0]);
         $this->assertSame($r,$el1->childNodes[1]);
         $this->assertSame($el4,$el1->childNodes[2]);
         
-        $this->assertNull($el3->parentNode);       
-        $this->assertSame($el1,$r->parentNode);       
+        $this->assertNull($el3->parentNode);
+        $this->assertSame($el1,$r->parentNode);
     }
 }

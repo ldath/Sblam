@@ -9,16 +9,15 @@
  * @author   Laurent Bedubourg <lbedubourg@motion-twin.com>
  * @author   Kornel Lesiński <kornel@aardvarkmedia.co.uk>
  * @license  http://www.gnu.org/licenses/lgpl.html GNU Lesser General Public License
- * @version  SVN: $Id: EchoExecuteTest.php 584 2009-04-27 11:45:25Z kornel $
  * @link     http://phptal.org/
  */
 
 require_once dirname(__FILE__)."/config.php";
 
 class EchoExecuteTest extends PHPTAL_TestCase
-{    
+{
     private function echoExecute(PHPTAL $tpl)
-    {        
+    {
         try {
             ob_start();
                 $this->assertEquals(0,strlen($tpl->echoExecute()));

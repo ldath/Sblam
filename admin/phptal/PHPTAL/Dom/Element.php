@@ -9,7 +9,6 @@
  * @author   Laurent Bedubourg <lbedubourg@motion-twin.com>
  * @author   Kornel Lesiński <kornel@aardvarkmedia.co.uk>
  * @license  http://www.gnu.org/licenses/lgpl.html GNU Lesser General Public License
- * @version  SVN: $Id: Element.php 774 2009-10-26 01:27:45Z kornel $
  * @link     http://phptal.org/
  */
 
@@ -177,7 +176,7 @@ class PHPTAL_Dom_Element extends PHPTAL_Dom_Node implements PHPTAL_Php_Tree
             if ($node === $oldElement) {
                 $oldElement->parentNode = NULL;
                 
-                if ($newElement->parentNode) $newElement->parentNode->removeChild($child);                
+                if ($newElement->parentNode) $newElement->parentNode->removeChild($child);
                 $newElement->parentNode = $this;
                 
                 $this->childNodes[$k] = $newElement;
@@ -233,7 +232,7 @@ class PHPTAL_Dom_Element extends PHPTAL_Dom_Node implements PHPTAL_Php_Tree
 
     /**
      * Array with PHPTAL_Dom_Attr objects
-     * 
+     *
      * @return array
      */
     public function getAttributeNodes()
@@ -243,7 +242,7 @@ class PHPTAL_Dom_Element extends PHPTAL_Dom_Node implements PHPTAL_Php_Tree
     
     /**
      * Replace all attributes
-     * 
+     *
      * @param array $nodes array of PHPTAL_Dom_Attr objects
      */
     public function setAttributeNodes(array $nodes)
@@ -298,7 +297,7 @@ class PHPTAL_Dom_Element extends PHPTAL_Dom_Node implements PHPTAL_Php_Tree
     /**
      * Returns true if this element or one of its PHPTAL attributes has some
      * content to print (an empty text node child does not count).
-     * 
+     *
      * @return bool
      */
     public function hasRealContent()
